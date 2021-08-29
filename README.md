@@ -6,7 +6,7 @@ This is a web app that allows users to learn more about their favorite artists/s
 ## How app was built/What tech was used
 The app is pretty straightforward. The backend uses Node.js with the Koa framework, with SQLite3 as a database. I built this app mostly out of personal interest, and didn't build it with a "production mode" in mind, hence why it uses Sqlite3 and is fairly minimalistic. The backend essentially just runs dymanically generated SQL queries based off URL parameters passed by Koa, and returns the data from those Sqlite3 queries. better-sqlite-3 is used to communicate with the database file, as it runs synchronously unlike the standard sqlite-3 package. Functions related to generating sql queries and getting data from the db are in /db/data.ts.
 
-The front-end was built with Typescript, using Create-React-App, and Material UI. Axios is used for communication with the serve, and state is managed with React Hooks (application isn't complex enough to justify using Redux/other state management tools). The front-end has its own repository over here: https://github.com/ae4sri/spotifyanalyzerfrontend
+The front-end was built with Typescript, using Create-React-App, and Material UI. Axios is used for communication with the server, and state is managed with React Hooks (application isn't complex enough to justify using Redux/other state management tools). The front-end has its own repository over here: https://github.com/ae4sri/spotifyanalyzerfrontend
 
 ## How to run
 

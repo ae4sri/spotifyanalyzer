@@ -1,3 +1,6 @@
+import { SongInfo, ArtistInfo } from "../types";
+
+
 const Database = require('better-sqlite3');
 
 const db = new Database(__dirname+'/spotifychartsdata.db'); // Connect pre-existing database to application
@@ -64,7 +67,7 @@ export const highestPosition = (song: string, artist: string): Object => {
     return highestPositionOnChart.get(song, artist) // return highest position the song has peaked at
 }
 
-export const artistInfo = (artist: string): Object => {
+export const artistInfo = (artist: string): ArtistInfo => {
     return {
         allSongs: allSongs(artist),
         timesOnChart: timesOnChart(artist),
@@ -74,7 +77,7 @@ export const artistInfo = (artist: string): Object => {
     }
 } 
 
-export const songInfo = (song: string, artist: string): Object => {
+export const songInfo = (song: string, artist: string): SongInfo => {
     return {
         topTenDates: topTenDatesForSong(song, artist),
         daysOnChart: daysSpentOnChart(song, artist),

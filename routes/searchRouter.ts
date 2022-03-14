@@ -1,5 +1,5 @@
 import KoaRouter from 'koa-router'
-import { search } from '../db/data'
+import { search } from '../db/fetchData'
 
 const searchRouter = new KoaRouter()
 

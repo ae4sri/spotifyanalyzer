@@ -8,8 +8,9 @@ searchRouter.get('/search/:query', async (ctx) => {
         const query = ctx.params.query
         ctx.body = search(query)
     }
-    catch(e) {
-        ctx.throw(400, e.message )
+    catch(e: unknown) {
+        const error = e as Error;
+        ctx.throw(400, error.message )
     }
 })
 

@@ -17,7 +17,8 @@ artistRouter.get('/:artist/:song', async (ctx) => {
             highestPosition: highestPosition(song, artist)
         }        
     } catch(e) {
-        ctx.throw(400, e.message )
+        const error = e as Error;
+        ctx.throw(400, error.message )
     }
 })
 
@@ -32,7 +33,8 @@ artistRouter.get('/:artist', async (ctx) => {
             highestIndividualSongStreams: tenHighestDailyStreamsOnIndividualSongs(artist)
         }
     } catch(e) {
-        ctx.throw(404, e.message)
+        const error = e as Error;
+        ctx.throw(400, error.message )
     }
 })
 
